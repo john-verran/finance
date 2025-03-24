@@ -1,0 +1,12 @@
+[tools]
+node = "20"
+pnpm = "latest"
+podman = "latest"
+postgres = "15"
+
+[tasks.podman-start]
+run = "podman machine start"
+
+[tasks.podman-compose]
+depends = "podman-start"
+run = "podman compose up -d"
